@@ -1,0 +1,31 @@
+Package: emberdays
+Title: Explore Hot Days in Australian Bushfire Seasons
+Version: 0.1.0
+Authors@R: 
+    person("Gaurav", "Warke", , "gauravwarke8@gmail.com", role = c("aut", "cre"))
+Description: Provides daily maximum temperatures from the Australian
+    Bureau of Meteorology for seven Australian cities from 1910 to 2019,
+    functions that count very hot days in each bushfire season (September
+    to February) and compare an early period with a recent one, and a
+    Shiny app that helps residents of bushfire-prone areas check whether
+    hot fire-season days have become more common where they live.
+License: MIT + file LICENSE
+URL: https://github.com/ETC5523-2026/etc5523-assignment-4-gauravwarke,
+    https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/
+BugReports: https://github.com/ETC5523-2026/etc5523-assignment-4-gauravwarke/issues
+Depends: 
+    R (>= 4.1.0)
+Imports: 
+    bslib,
+    dplyr,
+    ggplot2,
+    gt,
+    shiny
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.1

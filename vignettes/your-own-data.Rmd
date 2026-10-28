@@ -1,0 +1,116 @@
+---
+title: "Use emberdays with your own daily data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Use emberdays with your own daily data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7,
+                      fig.height = 3.6, out.width = "100%")
+```
+
+The app answers one question about fire-season heat in seven cities. The functions behind it work on **any daily series**: your own weather station, a Bureau of Meteorology download, river heights or rainfall. This guide shows the three steps.
+
+| Step | Function | What it does |
+|---|---|---|
+| 1. Count | `count_exceedances()` | Days at or above (or at or below) a threshold, in each year or season, with a missing-data check |
+| 2. Compare | `compare_periods()` | Average counts in an early and a recent period, using complete seasons only |
+| 3. Explain | `describe_change()` | One plain-English sentence for a report or a non-specialist |
+
+```{r setup}
+library(emberdays)
+library(dplyr)
+```
+
+## Your data, your column names
+
+You need one row per day for a single place, with a `Date` column and a numeric column. The names can be anything. Here we pretend a slice of the packaged data is a file you imported, with your own column names:
+
+```{r}
+my_station <- fire_season_temps |>
+  filter(city == "Adelaide") |>
+  select(day = date, tmax = max_temp)
+
+head(my_station)
+```
+
+If your dates are text, convert them first with `as.Date()`.
+
+## 1. Count: choose the threshold, the direction and the season
+
+Count summer days (December to February) of 40°C or more. Summer crosses New Year, so `start_month = 12` keeps each summer together, labelled like `"2018-19"`:
+
+```{r}
+hot40 <- count_exceedances(my_station, "tmax", threshold = 40, date = "day",
+                           start_month = 12, months = c(12, 1, 2))
+tail(hot40)
+```
+
+- `n_exceed` is the count of days meeting the threshold; `extreme` is the hottest day.
+- `coverage` and `complete` show how much of each season has a reading. Incomplete seasons are kept and flagged, not dropped silently.
+
+Use `direction = "below"` for the opposite end, for example mild summer days with a maximum of 22°C or less:
+
+```{r}
+mild <- count_exceedances(my_station, "tmax", threshold = 22,
+                          direction = "below", date = "day",
+                          start_month = 12, months = c(12, 1, 2))
+```
+
+Common season settings:
+
+| Season | `start_month` | `months` |
+|---|---|---|
+| Calendar year | `1` | `1:12` |
+| Southern fire season | `9` | `c(9:12, 1:2)` |
+| Southern summer | `12` | `c(12, 1, 2)` |
+| July–June (financial or water year) | `7` | `1:12` |
+
+## 2. Compare two periods
+
+```{r}
+hot_change <- compare_periods(hot40, early = c(1910, 1939),
+                              recent = c(1988, 2017))
+hot_change
+```
+
+`enough_data` is `FALSE` when a period has fewer than 10 complete seasons, so you know when an average is fragile.
+
+## 3. Explain it in one sentence
+
+```{r}
+describe_change(hot_change, what = "summer days of 40°C or more",
+                place = "Adelaide")
+
+mild |>
+  compare_periods(early = c(1910, 1939), recent = c(1988, 2017)) |>
+  describe_change(what = "mild summer days (22°C or less)", place = "Adelaide")
+```
+
+Paste the sentence into a report, a Quarto document or a Shiny app; the Ember Days app uses exactly this function for its "Answer" line.
+
+## Plot the counts
+
+The output is an ordinary tibble, so it plots directly with ggplot2:
+
+```{r, fig.alt = "Bar chart of summer days of 40 degrees or more in Adelaide each summer since 1910."}
+library(ggplot2)
+
+hot40 |>
+  filter(complete) |>
+  ggplot(aes(season_start, n_exceed)) +
+  geom_col(fill = "#C46A1F") +
+  labs(x = "Summer (year it starts)", y = "Days of 40°C or more",
+       title = "Adelaide summer days of 40°C or more") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title.position = "plot")
+```
+
+## Things to check first
+
+- **One place at a time.** `count_exceedances()` stops if it finds repeated dates, which usually means two stations are mixed together.
+- **Gaps.** Look at `coverage` before trusting a count; the `min_coverage` argument sets the cut-off (90% by default).
+- **Thresholds are yours to justify.** Pick a value that means something to your reader, such as a public health heat threshold or a local rainfall benchmark.

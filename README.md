@@ -1,0 +1,118 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# emberdays
+
+*Counting the days hot enough to feed a fire.*
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+**Documentation website:**
+<https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/>
+
+emberdays helps **people living in bushfire-prone parts of Australia**
+answer one question:
+
+> *In my city, are very hot days during the bushfire season more common
+> now than in the early 1900s?*
+
+Hot days dry out fuels and drive dangerous fire weather, and rising
+temperature is the main reason fire weather has worsened in southeastern
+Australia (van Oldenborgh et al., 2021). The package provides:
+
+- **Data:** `fire_season_temps`, daily maximum temperatures for the
+  fire-season months (September to February) at one Bureau of
+  Meteorology station in each of seven cities, 1910 to February 2019.
+  `stations` describes each station.
+- **Functions for the question:** `count_hot_days()` counts days at or
+  above a temperature threshold in every fire season and flags seasons
+  with missing data. `compare_periods()` compares an early period with a
+  recent one. `describe_change()` turns that comparison into one
+  plain-English sentence.
+- **Functions for your own data:** `count_exceedances()` works on any
+  daily series with any column names. It counts days above *or* below a
+  threshold in a calendar year, a July–June year or any custom season.
+  `season_year()` labels those seasons. See the [own-data
+  guide](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/articles/your-own-data.html).
+- **An app:** `launch_app()` opens a Shiny app where you choose a city,
+  a “very hot day” threshold, part of the season and two periods to
+  compare.
+
+## Installation
+
+Install the package from GitHub:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("ETC5523-2026/etc5523-assignment-4-gauravwarke")
+```
+
+## Launch the app
+
+``` r
+library(emberdays)
+launch_app()
+```
+
+The app uses the data inside the package, so it works offline. The [Get
+started
+guide](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/articles/emberdays.html)
+explains each control and how to read the results.
+
+## Example
+
+How many days of 35°C or more did Perth average per fire season in the
+early 1900s, compared with the last 30 seasons?
+
+``` r
+library(emberdays)
+
+perth <- count_hot_days(fire_season_temps, city = "Perth", threshold = 35)
+compare_periods(perth, early = c(1910, 1939), recent = c(1989, 2018))
+#> # A tibble: 2 × 6
+#>   period first_season last_season seasons_used mean_hot_days enough_data
+#>   <chr>         <int>       <int>        <int>         <dbl> <lgl>      
+#> 1 Early          1910        1939           30          17.0 TRUE       
+#> 2 Recent         1989        2018           30          26.0 TRUE
+```
+
+Or ask for the answer in words:
+
+``` r
+compare_periods(perth) |>
+  describe_change(what = "days at or above 35°C", place = "Perth")
+#> [1] "In Perth, days at or above 35°C have become more common: recent seasons (1989–2018) averaged 26.0 per season, compared with 17.0 in 1910–1939, an increase of 9.0 per season (1.5 times the early average)."
+```
+
+Results differ between cities, which is why the app lets you choose
+yours.
+
+## Data source and licence
+
+Temperatures are from the Australian Bureau of Meteorology’s Climate
+Data Online (<http://www.bom.gov.au/climate/data/>), copyright
+Commonwealth of Australia, as compiled for [TidyTuesday 2020, week
+2](https://github.com/rfordatascience/tidytuesday/tree/main/data/2020/2020-01-07).
+The script `data-raw/fire_season_temps.R` downloads the raw file and
+rebuilds both datasets.
+
+Records end in February 2019, so the 2019–20 Black Summer season is not
+included. Each city is a single station, which may not match conditions
+on bushland edges.
+
+The package code is released under the MIT licence (see `LICENSE.md`).
+
+## Reference
+
+van Oldenborgh, G. J., et al. (2021). Attribution of the Australian
+bushfire risk to anthropogenic climate change. *Natural Hazards and
+Earth System Sciences*, 21(3), 941–960.
+<https://doi.org/10.5194/nhess-21-941-2021>
+
+## AI-use declaration
+
+I did not use AI for creating this assignment.I used it as a guide to
+understand the process and asked it doubts which i face and faced while
+working on different parts.

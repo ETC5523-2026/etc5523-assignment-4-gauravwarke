@@ -1,0 +1,87 @@
+/* Ember Days app styles: "bush at dusk" - eucalypt green, wattle gold,
+   dusk blue (early period) and ochre (recent period) on warm sand.
+   Goal: a clear reading order (question -> controls -> answer -> chart)
+   and high contrast text, rather than decoration. */
+
+body { line-height: 1.55; }
+
+.app-header {
+  background: #163A30;
+  color: #F3EFE4;
+  padding: 1.4rem 1.6rem 1.1rem;
+  margin: 0 -12px 1.4rem;
+  border-bottom: 5px solid #E9B44C;
+}
+.app-header h1 { color: #FFFFFF; font-size: 1.85rem; margin-bottom: .6rem; }
+.app-header p { margin-bottom: .35rem; max-width: 70rem; }
+.app-header strong { color: #E9B44C; }
+.lead-question { font-size: 1.15rem; }
+.audience { font-size: .98rem; color: #D7E2DB; }
+
+.well {
+  background: #FFFFFF;
+  border: 1px solid #DDD5C3;
+  border-top: 4px solid #1F4D3F;
+  border-radius: 8px;
+  box-shadow: none;
+}
+.well h3 { font-size: 1.2rem; color: #1F4D3F; margin-bottom: 1rem; }
+.control-label { font-weight: 600; color: #1F4D3F; }
+.help { font-size: .9rem; color: #555555; margin: -.4rem 0 1.1rem; }
+
+/* Slider in ember so the active range stands out */
+.irs--shiny .irs-bar, .irs--shiny .irs-single,
+.irs--shiny .irs-from, .irs--shiny .irs-to { background: #C46A1F; border-color: #C46A1F; }
+
+.nav-tabs .nav-link { color: #1F4D3F; font-weight: 600; }
+.nav-tabs .nav-link.active { border-top: 3px solid #C46A1F; }
+.tab-content { padding-top: 1rem; }
+
+/* Summary value boxes */
+.value-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.value-box {
+  flex: 1 1 12rem;
+  background: #FFFFFF;
+  border: 1px solid #DDD5C3;
+  border-left: 6px solid #CFC8B8;
+  border-radius: 8px;
+  padding: .7rem .9rem;
+}
+.vb-early { border-left-color: #2F5D8A; }
+.vb-recent { border-left-color: #C46A1F; }
+.vb-change { border-left-color: #E9B44C; background: #FDF5E3; }
+.vb-label { font-size: .85rem; color: #555555; text-transform: uppercase; letter-spacing: .03em; }
+.vb-value { font-size: 1.9rem; font-weight: 600; color: #222222; line-height: 1.2; }
+.vb-note { font-size: .88rem; color: #555555; }
+
+.narrative {
+  font-size: 1.08rem;
+  background: #E4EEE8;
+  border-radius: 8px;
+  padding: .7rem 1rem;
+}
+.narrative strong { color: #1F4D3F; }
+
+.plot-title { color: #1F4D3F; font-size: 1.1rem; margin-top: 1rem; }
+.how-to-read { font-size: .95rem; background: #FFFFFF; border: 1px dashed #CFC8B8;
+  border-radius: 8px; padding: .6rem .9rem; margin: .6rem 0; }
+.key { font-weight: 700; padding: 0 .3rem; border-radius: 3px; color: #FFFFFF; }
+.key-early { background: #2F5D8A; }
+.key-recent { background: #C46A1F; }
+.source { font-size: .85rem; color: #666666; }
+
+/* Empty, invalid and weak states: colour + a bold lead word, never colour alone */
+.state-box { border-radius: 8px; padding: .7rem 1rem; margin-bottom: .8rem; border-left: 6px solid; }
+.state-weak { background: #FFF4E0; border-color: #E0A100; }
+.state-empty { background: #EEF1F4; border-color: #6B7C93; }
+.state-invalid { background: #FBE9E4; border-color: #B23A1A; }
+
+.shiny-output-error-validation { color: #7A2E12; font-size: 1.05rem; padding: 1.5rem;
+  background: #FBE9E4; border-radius: 8px; }
+
+.glossary dt { color: #1F4D3F; margin-top: .6rem; }
+.glossary dd { margin-left: 0; }
+
+/* Brand line above the headline */
+.brand { font-weight: 700; letter-spacing: .25em; font-size: .8rem; color: #E9B44C; margin-bottom: .3rem; }
+.tagline { font-style: italic; color: #D7E2DB; margin-bottom: .7rem !important; }

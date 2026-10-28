@@ -1,0 +1,48 @@
+url: https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/
+
+destination: docs
+
+template:
+  bootstrap: 5
+  bslib:
+    bg: "#F6F3EB"
+    fg: "#1E2421"
+    primary: "#1F4D3F"
+    link-color: "#A0521A"
+    base_font: {google: "Source Sans 3"}
+    heading_font: {google: "Merriweather"}
+
+navbar:
+  bg: primary
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+
+home:
+  title: "emberdays: counting the days hot enough to feed a fire"
+  description: >
+    Check whether very hot fire-season days have become more common in
+    seven Australian cities since 1910, with a Shiny app and documented data.
+
+reference:
+  - title: "Launch the app"
+    desc: "Open the interactive explorer."
+    contents:
+      - launch_app
+  - title: "Count and compare hot days"
+    desc: "The fire-season functions the app is built on."
+    contents:
+      - count_hot_days
+      - compare_periods
+      - describe_change
+      - fire_season
+  - title: "Use with any daily data"
+    desc: "General tools for your own weather or environmental series."
+    contents:
+      - count_exceedances
+      - season_year
+  - title: "Data"
+    desc: "Temperatures and station details included in the package."
+    contents:
+      - fire_season_temps
+      - stations
