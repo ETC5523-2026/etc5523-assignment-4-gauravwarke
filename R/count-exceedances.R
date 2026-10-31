@@ -78,7 +78,7 @@ season_year <- function(date, start_month = 1) {
 #'                   date = "day", start_month = 12, months = c(12, 1, 2)) |>
 #'   tail()
 #' @importFrom dplyr filter mutate group_by summarise left_join arrange n
-#'   coalesce
+#' @importFrom dplyr coalesce
 #' @export
 count_exceedances <- function(data, value, threshold,
                               direction = c("above", "below"),

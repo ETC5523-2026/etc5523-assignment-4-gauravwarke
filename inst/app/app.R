@@ -7,12 +7,12 @@
 # Data come from the installed package (emberdays::fire_season_temps), so
 # the app never reads a CSV or other file when it runs.
 
-library(shiny)
-library(bslib)
-library(dplyr)
-library(ggplot2)
-library(gt)
-library(emberdays)
+suppressPackageStartupMessages(suppressWarnings({
+  library(shiny); library(bslib); library(dplyr)
+  library(ggplot2); library(gt)
+  library(emberdays)
+}))
+
 
 
 temps <- emberdays::fire_season_temps
