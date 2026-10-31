@@ -112,6 +112,4 @@ Earth System Sciences*, 21(3), 941–960.
 
 ## AI-use declaration
 
-I did not use AI for creating this assignment.I used it as a guide to
-understand the process and asked it doubts which i face and faced while
-working on different parts.
+I completed this assignment independently, using AI solely as a guide to clarify concepts and troubleshoot specific challenges encountered throughout the development process.
