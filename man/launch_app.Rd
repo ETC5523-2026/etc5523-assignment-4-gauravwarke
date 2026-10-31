@@ -8,7 +8,7 @@ launch_app(...)
 }
 \arguments{
 \item{...}{Further arguments passed to \code{\link[shiny:runApp]{shiny::runApp()}}, for example
-\code{port = 3838} or \code{launch.browser = FALSE}.}
+\code{port = 3838}.}
 }
 \value{
 Called for its side effect of starting the app. Returns the
@@ -18,7 +18,8 @@ value of \code{\link[shiny:runApp]{shiny::runApp()}} invisibly when the app is c
 Opens a Shiny app for people living in bushfire-prone parts of Australia
 who want to check whether very hot days in the fire season have become more
 common in their city. The app uses the \link{fire_season_temps} data that comes
-with the package, so it needs no data files and works offline.
+with the package, so it needs no data files and works offline. The app
+opens in your default web browser.
 }
 \examples{
 if (interactive()) {

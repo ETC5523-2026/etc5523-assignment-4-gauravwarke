@@ -3,10 +3,11 @@
 #' Opens a Shiny app for people living in bushfire-prone parts of Australia
 #' who want to check whether very hot days in the fire season have become more
 #' common in their city. The app uses the [fire_season_temps] data that comes
-#' with the package, so it needs no data files and works offline.
+#' with the package, so it needs no data files and works offline. The app
+#' opens in your default web browser.
 #'
 #' @param ... Further arguments passed to [shiny::runApp()], for example
-#'   `port = 3838` or `launch.browser = FALSE`.
+#'   `port = 3838`.
 #'
 #' @return Called for its side effect of starting the app. Returns the
 #'   value of [shiny::runApp()] invisibly when the app is closed.
@@ -21,5 +22,5 @@ launch_app <- function(...) {
   if (app_dir == "") {
     stop("Could not find the app. Try reinstalling emberdays.", call. = FALSE)
   }
-  shiny::runApp(app_dir, display.mode = "normal", ...)
+  shiny::runApp(app_dir, display.mode = "normal", launch.browser = TRUE, ...)
 }

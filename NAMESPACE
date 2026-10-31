@@ -8,14 +8,16 @@ export(fire_season)
 export(launch_app)
 export(season_year)
 importFrom(bslib,bs_theme)
-importFrom(dplyr,arrange)
-importFrom(dplyr,bind_rows)
-importFrom(dplyr,coalesce)
-importFrom(dplyr,filter)
-importFrom(dplyr,group_by)
-importFrom(dplyr,left_join)
-importFrom(dplyr,mutate)
-importFrom(dplyr,n)
-importFrom(dplyr,summarise)
+importFrom(dplyr,
+  arrange,
+  bind_rows,
+  coalesce,
+  filter,
+  group_by,
+  left_join,
+  mutate,
+  n,
+  summarise
+)
 importFrom(ggplot2,ggplot)
 importFrom(gt,gt)
