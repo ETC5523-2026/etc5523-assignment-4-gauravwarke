@@ -30,8 +30,6 @@
 #'   <https://github.com/rfordatascience/tidytuesday/tree/main/data/2020/2020-01-07>.
 #'   BoM data are copyright Commonwealth of Australia.
 #'
-#' @seealso [count_hot_days()] to turn these readings into hot-day counts,
-#'   [stations] for the station behind each city.
 #' @examples
 #' head(fire_season_temps)
 #' # Hottest fire-season day on record in each city

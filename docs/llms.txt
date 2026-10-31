@@ -162,6 +162,14 @@ Temperatures and station details included in the package.
 - [`stations`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/stations.md)
   : Weather stations behind each city in fire_season_temps
 
+## About the package
+
+Overview of emberdays.
+
+- [`emberdays`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/emberdays-package.md)
+  [`emberdays-package`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/emberdays-package.md)
+  : emberdays: very hot days in the bushfire season
+
 # Articles
 
 ### All vignettes

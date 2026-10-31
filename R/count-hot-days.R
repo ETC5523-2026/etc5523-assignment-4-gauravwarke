@@ -68,8 +68,6 @@ fire_season <- function(date) {
 #' count_hot_days(fire_season_temps, "Adelaide", threshold = 40,
 #'                months = c(12, 1, 2)) |>
 #'   dplyr::slice_max(hot_days, n = 3)
-#' @seealso [count_exceedances()] for any variable, threshold direction or
-#'   season.
 #' @export
 count_hot_days <- function(temps, city, threshold = 35,
                            months = c(9:12, 1:2), min_coverage = 0.9) {

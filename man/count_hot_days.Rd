@@ -59,7 +59,3 @@ count_hot_days(fire_season_temps, "Adelaide", threshold = 40,
                months = c(12, 1, 2)) |>
   dplyr::slice_max(hot_days, n = 3)
 }
-\seealso{
-\code{\link[=count_exceedances]{count_exceedances()}} for any variable, threshold direction or
-season.
-}

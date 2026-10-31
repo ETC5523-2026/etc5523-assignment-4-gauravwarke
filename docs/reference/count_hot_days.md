@@ -86,11 +86,6 @@ A tibble with one row per fire season and columns:
 
   `TRUE` when `coverage` is at least `min_coverage`.
 
-## See also
-
-[`count_exceedances()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/count_exceedances.md)
-for any variable, threshold direction or season.
-
 ## Examples
 
 ``` r

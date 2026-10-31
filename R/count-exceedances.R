@@ -15,7 +15,6 @@
 #' d <- as.Date(c("2018-06-30", "2018-07-01", "2019-02-01"))
 #' season_year(d)                    # calendar years: 2018 2018 2019
 #' season_year(d, start_month = 7)   # July-June years: 2017 2018 2018
-#' @seealso [fire_season()] for the September-to-February fire season.
 #' @export
 season_year <- function(date, start_month = 1) {
   if (!inherits(date, "Date")) {

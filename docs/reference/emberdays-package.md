@@ -1,11 +1,7 @@
-# emberdays: Explore Hot Days in Australian Bushfire Seasons
+# emberdays: very hot days in the bushfire season
 
-Provides daily maximum temperatures from the Australian Bureau of
-Meteorology for seven Australian cities from 1910 to 2019, functions
-that count very hot days in each bushfire season (September to February)
-and compare an early period with a recent one, and a Shiny app that
-helps residents of bushfire-prone areas check whether hot fire-season
-days have become more common where they live.
+Data, functions and a Shiny app to check whether very hot fire-season
+days have become more common in seven Australian cities.
 
 ## See also
 

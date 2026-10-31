@@ -46,3 +46,7 @@ reference:
     contents:
       - fire_season_temps
       - stations
+  - title: "About the package"
+    desc: "Overview of emberdays."
+    contents:
+      - emberdays-package

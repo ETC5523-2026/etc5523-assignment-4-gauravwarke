@@ -26,11 +26,6 @@ season_year(date, start_month = 1)
 
 An integer vector the same length as `date`.
 
-## See also
-
-[`fire_season()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/fire_season.md)
-for the September-to-February fire season.
-
 ## Examples
 
 ``` r

@@ -52,13 +52,6 @@ up, which can shift readings slightly, so treat small differences
 between periods with caution. See `data-raw/fire_season_temps.R` for
 every preparation step.
 
-## See also
-
-[`count_hot_days()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/count_hot_days.md)
-to turn these readings into hot-day counts,
-[stations](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/stations.md)
-for the station behind each city.
-
 ## Examples
 
 ``` r

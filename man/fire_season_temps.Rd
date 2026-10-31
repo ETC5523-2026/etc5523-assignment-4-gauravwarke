@@ -48,8 +48,4 @@ fire_season_temps |>
   dplyr::group_by(city) |>
   dplyr::slice_max(max_temp, n = 1, with_ties = FALSE)
 }
-\seealso{
-\code{\link[=count_hot_days]{count_hot_days()}} to turn these readings into hot-day counts,
-\link{stations} for the station behind each city.
-}
 \keyword{datasets}
