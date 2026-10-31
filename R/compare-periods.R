@@ -1,9 +1,9 @@
 #' Compare hot days in an early period with a recent period
 #'
-#' Summarises the output of [count_hot_days()] for two non-overlapping
-#' periods, so a user can see whether very hot fire-season days have become
-#' more common. Only complete seasons (see the `complete` column) are used,
-#' because a season with many missing days would undercount hot days.
+#' Averages the output of [count_hot_days()] over two periods that do not
+#' overlap, so you can see whether very hot fire-season days have become more
+#' common. Only complete seasons (see the `complete` column) are used, because
+#' a season with many missing days would undercount hot days.
 #'
 #' @param hot_days A tibble returned by [count_hot_days()] or
 #'   [count_exceedances()].

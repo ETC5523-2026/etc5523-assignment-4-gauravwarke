@@ -15,11 +15,10 @@ Called for its side effect of starting the app. Returns the
 value of \code{\link[shiny:runApp]{shiny::runApp()}} invisibly when the app is closed.
 }
 \description{
-Opens a Shiny app that helps people living in bushfire-prone parts of
-Australia check whether very hot days in the fire season have become more
-common in their city. The app uses the \link{fire_season_temps} data that
-comes with the package, so it does not need an internet connection or
-any data files.
+Opens a Shiny app for people living in bushfire-prone parts of Australia
+who want to check whether very hot days in the fire season have become more
+common in their city. The app uses the \link{fire_season_temps} data that comes
+with the package, so it needs no data files and works offline.
 }
 \examples{
 if (interactive()) {

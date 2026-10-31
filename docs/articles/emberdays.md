@@ -6,9 +6,9 @@ want to answer one question:
 > **In my city, are very hot days during the bushfire season more common
 > now than in the early 1900s?**
 
-It shows how to install the package, launch and use the app, and read
-what it tells you. The last section repeats the analysis in code for
-readers who use R.
+It covers installing the package, launching the app and reading what it
+shows. The last section repeats the analysis in code for people who use
+R.
 
 ## 1. Install the package
 

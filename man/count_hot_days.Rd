@@ -44,10 +44,10 @@ A tibble with one row per fire season and columns:
 }
 }
 \description{
-For one city, counts the days in each fire season whose maximum
-temperature reached a chosen threshold, and records how complete the
-temperature record is for that season. Seasons with too many missing
-days are flagged rather than dropped, so users can see the gaps.
+Counts, for one city, the days in each fire season that reached a chosen
+maximum temperature, and records how complete the temperature record is
+for that season. Seasons with too many missing days are flagged, not
+dropped, so you can see the gaps.
 }
 \examples{
 # Days of 35 degrees C or more in each Melbourne fire season

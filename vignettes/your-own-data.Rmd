@@ -27,7 +27,7 @@ library(dplyr)
 
 ## Your data, your column names
 
-You need one row per day for a single place, with a `Date` column and a numeric column. The names can be anything. Here we pretend a slice of the packaged data is a file you imported, with your own column names:
+You need one row per day for a single place, with a `Date` column and a numeric column. The names can be anything. Here a slice of the packaged data stands in for a file you imported, with column names of your own:
 
 ```{r}
 my_station <- fire_season_temps |>

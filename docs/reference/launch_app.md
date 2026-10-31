@@ -1,11 +1,11 @@
 # Launch the Ember Days app
 
-Opens a Shiny app that helps people living in bushfire-prone parts of
-Australia check whether very hot days in the fire season have become
+Opens a Shiny app for people living in bushfire-prone parts of Australia
+who want to check whether very hot days in the fire season have become
 more common in their city. The app uses the
 [fire_season_temps](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/fire_season_temps.md)
-data that comes with the package, so it does not need an internet
-connection or any data files.
+data that comes with the package, so it needs no data files and works
+offline.
 
 ## Usage
 

@@ -1,8 +1,8 @@
 # Compare hot days in an early period with a recent period
 
-Summarises the output of
+Averages the output of
 [`count_hot_days()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/count_hot_days.md)
-for two non-overlapping periods, so a user can see whether very hot
+over two periods that do not overlap, so you can see whether very hot
 fire-season days have become more common. Only complete seasons (see the
 `complete` column) are used, because a season with many missing days
 would undercount hot days.

@@ -48,8 +48,8 @@ calendar years), \code{days_possible}, \code{days_recorded}, \code{coverage},
 for \code{"above"}, the lowest for \code{"below"}) and \code{complete}.
 }
 \description{
-The general engine behind \code{\link[=count_hot_days]{count_hot_days()}}. Works on any data frame of
-daily values, from any source, with any column names: count very hot days,
+The general-purpose function behind \code{\link[=count_hot_days]{count_hot_days()}}. It works on any
+data frame of daily values, from any source, with any column names: count very hot days,
 mild days, heavy-rain days or cold nights, in a calendar year, a July-June
 year or a custom season. Missing days are counted against each season's
 coverage, so seasons with gaps are flagged rather than silently

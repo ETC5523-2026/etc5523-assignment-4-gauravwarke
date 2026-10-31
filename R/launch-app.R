@@ -1,10 +1,9 @@
 #' Launch the Ember Days app
 #'
-#' Opens a Shiny app that helps people living in bushfire-prone parts of
-#' Australia check whether very hot days in the fire season have become more
-#' common in their city. The app uses the [fire_season_temps] data that
-#' comes with the package, so it does not need an internet connection or
-#' any data files.
+#' Opens a Shiny app for people living in bushfire-prone parts of Australia
+#' who want to check whether very hot days in the fire season have become more
+#' common in their city. The app uses the [fire_season_temps] data that comes
+#' with the package, so it needs no data files and works offline.
 #'
 #' @param ... Further arguments passed to [shiny::runApp()], for example
 #'   `port = 3838` or `launch.browser = FALSE`.

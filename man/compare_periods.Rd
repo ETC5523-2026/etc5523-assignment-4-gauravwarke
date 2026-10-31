@@ -38,10 +38,10 @@ A tibble with two rows (\code{"Early"} and \code{"Recent"}) and columns:
 }
 }
 \description{
-Summarises the output of \code{\link[=count_hot_days]{count_hot_days()}} for two non-overlapping
-periods, so a user can see whether very hot fire-season days have become
-more common. Only complete seasons (see the \code{complete} column) are used,
-because a season with many missing days would undercount hot days.
+Averages the output of \code{\link[=count_hot_days]{count_hot_days()}} over two periods that do not
+overlap, so you can see whether very hot fire-season days have become more
+common. Only complete seasons (see the \code{complete} column) are used, because
+a season with many missing days would undercount hot days.
 }
 \examples{
 melb <- count_hot_days(fire_season_temps, "Melbourne")

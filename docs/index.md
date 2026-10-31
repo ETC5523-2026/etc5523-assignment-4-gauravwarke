@@ -11,9 +11,10 @@ answer one question:
 > *In my city, are very hot days during the bushfire season more common
 > now than in the early 1900s?*
 
-Hot days dry out fuels and drive dangerous fire weather, and rising
-temperature is the main reason fire weather has worsened in southeastern
-Australia (van Oldenborgh et al., 2021). The package provides:
+Hot days dry out the bush and drive dangerous fire weather. A study of
+the 2019–20 fires found that rising temperature is the main reason fire
+weather has got worse in southeastern Australia (van Oldenborgh et al.,
+2021). The package gives you:
 
 - **Data:** `fire_season_temps`, daily maximum temperatures for the
   fire-season months (September to February) at one Bureau of
@@ -21,17 +22,17 @@ Australia (van Oldenborgh et al., 2021). The package provides:
   `stations` describes each station.
 - **Functions for the question:**
   [`count_hot_days()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/count_hot_days.md)
-  counts days at or above a temperature threshold in every fire season
-  and flags seasons with missing data.
+  counts the days at or above a temperature threshold in each fire
+  season and flags seasons with missing data.
   [`compare_periods()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/compare_periods.md)
-  compares an early period with a recent one.
+  sets an early period against a recent one.
   [`describe_change()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/describe_change.md)
   turns that comparison into one plain-English sentence.
 - **Functions for your own data:**
   [`count_exceedances()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/count_exceedances.md)
-  works on any daily series with any column names. It counts days above
-  *or* below a threshold in a calendar year, a July–June year or any
-  custom season.
+  works on any daily series, whatever the column names. It counts days
+  above *or* below a threshold in a calendar year, a July–June year or a
+  season you define.
   [`season_year()`](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/reference/season_year.md)
   labels those seasons. See the [own-data
   guide](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/articles/your-own-data.html).

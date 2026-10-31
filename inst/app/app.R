@@ -1,9 +1,9 @@
 # Ember Days: a Shiny app in the emberdays package
-#
+
 # User:     people living in bushfire-prone parts of Australia
 # Question: In my city, are very hot days in the fire season more common now
 #           than in the early 1900s?
-#
+
 # Data come from the installed package (emberdays::fire_season_temps), so
 # the app never reads a CSV or other file when it runs.
 
@@ -14,7 +14,7 @@ library(ggplot2)
 library(gt)
 library(emberdays)
 
-# ---- Data and fixed choices -------------------------------------------------
+
 temps <- emberdays::fire_season_temps
 station_info <- emberdays::stations
 
@@ -80,12 +80,12 @@ ui <- fluidPage(
       selectInput("city", "1. Your nearest city", choices = city_choices,
                   selected = "Melbourne"),
       p(class = "help",
-        "Each city is measured at one Bureau of Meteorology weather station, named after the city. Pick the one closest to you."),
+        "Each city is measured at one Bureau of Meteorology weather station. Pick the city closest to you."),
 
       sliderInput("threshold", "2. What counts as a very hot day?",
                   min = 30, max = 45, value = 35, step = 1, post = "\u00b0C"),
       p(class = "help",
-        "A day counts when its maximum temperature reaches this value. 35\u00b0C is a common extreme-heat benchmark; move it up to focus on the most dangerous days."),
+        "A day counts when its highest temperature reaches this value. 35\u00b0C is a common benchmark for extreme heat. Raise it to focus on the most dangerous days."),
 
       radioButtons("season_part", "3. Part of the fire season",
                    choices = c("Whole season (Sep\u2013Feb)" = "whole",
@@ -100,7 +100,7 @@ ui <- fluidPage(
       sliderInput("recent", "5. Recent period", min = first_season, max = last_season,
                   value = c(1989, 2018), step = 1, sep = ""),
       p(class = "help",
-        "Years are the year a season starts: 1989 means September 1989 to February 1990. The defaults compare the first and last 30 seasons, the usual length for a climate average. The periods must not overlap.")
+        "A year here is the year a season starts, so 1989 means September 1989 to February 1990. The defaults compare the first and last 30 seasons, the usual length for a climate average. The two periods can't overlap.")
     ),
 
     mainPanel(
@@ -303,10 +303,7 @@ server <- function(input, output, session) {
     )
   })
 
-  # Auto-written sentence that answers the question for the current choices
-  # Auto-written sentence that answers the question for the current choices.
-  # describe_change() is an exported package function, so the same sentence
-  # is available to R users outside the app.
+
   output$narrative <- renderUI({
     comp <- comparison()
     req(!no_hot_days(), all(comp$seasons_used > 0))

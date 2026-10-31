@@ -1,6 +1,4 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # emberdays
 
 *Counting the days hot enough to feed a fire.*
@@ -18,23 +16,24 @@ answer one question:
 > *In my city, are very hot days during the bushfire season more common
 > now than in the early 1900s?*
 
-Hot days dry out fuels and drive dangerous fire weather, and rising
-temperature is the main reason fire weather has worsened in southeastern
-Australia (van Oldenborgh et al., 2021). The package provides:
+Hot days dry out the bush and drive dangerous fire weather. A study of
+the 2019–20 fires found that rising temperature is the main reason fire
+weather has got worse in southeastern Australia (van Oldenborgh et al.,
+2021). The package gives you:
 
 - **Data:** `fire_season_temps`, daily maximum temperatures for the
   fire-season months (September to February) at one Bureau of
   Meteorology station in each of seven cities, 1910 to February 2019.
   `stations` describes each station.
-- **Functions for the question:** `count_hot_days()` counts days at or
-  above a temperature threshold in every fire season and flags seasons
-  with missing data. `compare_periods()` compares an early period with a
+- **Functions for the question:** `count_hot_days()` counts the days at
+  or above a temperature threshold in each fire season and flags seasons
+  with missing data. `compare_periods()` sets an early period against a
   recent one. `describe_change()` turns that comparison into one
   plain-English sentence.
 - **Functions for your own data:** `count_exceedances()` works on any
-  daily series with any column names. It counts days above *or* below a
-  threshold in a calendar year, a July–June year or any custom season.
-  `season_year()` labels those seasons. See the [own-data
+  daily series, whatever the column names. It counts days above *or*
+  below a threshold in a calendar year, a July–June year or a season you
+  define. `season_year()` labels those seasons. See the [own-data
   guide](https://etc5523-2026.github.io/etc5523-assignment-4-gauravwarke/articles/your-own-data.html).
 - **An app:** `launch_app()` opens a Shiny app where you choose a city,
   a “very hot day” threshold, part of the season and two periods to

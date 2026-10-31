@@ -32,8 +32,8 @@ season_year <- function(date, start_month = 1) {
 
 #' Count days above (or below) a threshold in each season-year
 #'
-#' The general engine behind [count_hot_days()]. Works on any data frame of
-#' daily values, from any source, with any column names: count very hot days,
+#' The general-purpose function behind [count_hot_days()]. It works on any
+#' data frame of daily values, from any source, with any column names: count very hot days,
 #' mild days, heavy-rain days or cold nights, in a calendar year, a July-June
 #' year or a custom season. Missing days are counted against each season's
 #' coverage, so seasons with gaps are flagged rather than silently

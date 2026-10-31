@@ -118,9 +118,9 @@ seasons only</td>
 <h2 id="your-data-your-column-names">Your data, your column names<a class="anchor" aria-label="anchor" href="#your-data-your-column-names"></a>
 </h2>
 <p>You need one row per day for a single place, with a <code>Date</code>
-column and a numeric column. The names can be anything. Here we pretend
-a slice of the packaged data is a file you imported, with your own
-column names:</p>
+column and a numeric column. The names can be anything. Here a slice of
+the packaged data stands in for a file you imported, with column names
+of your own:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_station</span> <span class="op">&lt;-</span> <span class="va">fire_season_temps</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">city</span> <span class="op">==</span> <span class="st">"Adelaide"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
